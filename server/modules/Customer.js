@@ -38,6 +38,17 @@ const customerSchema = new Schema({
         default: null,
         required: false
     },
+    dob: {
+        type: Date,
+        required: true,
+        validate: {
+            validator: function(val) {
+            const age = (new Date() - new Date(val)) / (1000 * 60 * 60 * 24 * 365.25);
+            return age >= 18 && age <= 85;
+            },
+            message: 'Date of birth must be between 18 and 85 years old'
+        }
+    },
     phoneNumber: {
         type: String,
         required: true,
@@ -48,11 +59,11 @@ const customerSchema = new Schema({
             message: 'Invalid Bangladeshi phone number'
         }
     },
-    age: {
+        age: {
         type: Number,
         required: true,
-        min: 18,
-        max: 65
+        min: [18, 'Age must be at least 18'],
+        max: [85, 'Age cannot be more than 85']
     }
 }, { timestamps: true }
 );
