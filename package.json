@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "cd client && npm start",
@@ -11,8 +11,8 @@
     "client_build": "cd client && npm install",
     "server_build": "cd server && npm install",
     "dev": "concurrently \"npm run client\" \"npm run server\"",
-    "server_deploy": "concurrently \"npm inatall\" \"npm run client_build\" \"npm run server_build\""
-
+    "server_deploy": "concurrently \"npm inatall\" \"npm run client_build\" \"npm run server_build\"",
+    "lint": "npm add -D prettier && npm add -D babel-eslint && npx install-peerdeps --dev eslint-config-airbnb && npm add -D eslint-config-prettier eslint-plugin-prettier"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,17 @@
   "homepage": "https://github.com/dostogirmir/wss_bidout_v1#readme",
   "dependencies": {
     "concurrently": "^7.6.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.32.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.32.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.3"
   }
 }
