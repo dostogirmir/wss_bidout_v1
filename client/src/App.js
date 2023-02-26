@@ -1,19 +1,39 @@
-import { Button } from 'react-bootstrap';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 function App() {
+   const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
-      <div>
         <>
-          <h1>Bootstrap 5 with React</h1>
-          <Button variant="primary">Primary</Button>{' '}
-          <Button variant="secondary">Secondary</Button>{' '}
-          <Button variant="success">Success</Button>{' '}
-          <Button variant="warning">Warning</Button>{' '}
-          <Button variant="danger">Danger</Button> <Button variant="info">Info</Button>{' '}
-          <Button variant="light">Light</Button> <Button variant="dark">Dark</Button>{' '}
-          <Button variant="link">Link</Button>
-        </>
-      </div>
+      <Button variant="primary" onClick={handleShow}>
+        Launch static backdrop modal
+      </Button>
+
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Modal title</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          I will not close if you click outside me. Don't even try to press
+          escape key.
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary">Understood</Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 }
 

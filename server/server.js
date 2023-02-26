@@ -39,7 +39,7 @@ const upload = multer({ storage });
 app.get("/", (req, res) => {
     res.send("Hello World");
 });
-app.use("/", routes);
+app.use("/api/v1", routes);
 
 await connect();
 app.listen(PORT, () => {

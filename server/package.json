@@ -13,7 +13,8 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.4",
     "multer-gridfs-storage": "^1.3.0",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "password-validator": "^5.3.0"
   },
   "name": "wss_bidout",
   "version": "1.0.0",
@@ -32,5 +33,8 @@
   "bugs": {
     "url": "https://github.com/dostogirmir/wss_bidout/issues"
   },
-  "homepage": "https://github.com/dostogirmir/wss_bidout#readme"
+  "homepage": "https://github.com/dostogirmir/wss_bidout#readme",
+  "devDependencies": {
+    "signale": "^1.4.0"
+  }
 }
