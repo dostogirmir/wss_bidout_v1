@@ -4,8 +4,8 @@ async function connect() {
     try {
         const PORT = envVars.PORT || 6001;
         await mongoose.connect(envVars.MONGO_URL, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
+             useNewUrlParser: true,
+             useUnifiedTopology: true,
         });
         console.log("MongoDB connection is successful");
     } catch (error) {
